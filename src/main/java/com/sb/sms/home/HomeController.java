@@ -19,4 +19,9 @@ public class HomeController {
    public String hello() {
         return "Hello World. I did it. Yes. Trying again and now once mroe..... !!!!";
     }
+   
+   @RequestMapping("/test")
+   public String test() {
+        return "This is a test response..... !!!!";
+    }
 }

@@ -76,28 +76,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.jboss.as.plugins</groupId>
-                <artifactId>jboss-as-maven-plugin</artifactId>
-                <version>7.9.Final</version>
-                <configuration>
-                    <hostname>18.136.107.44</hostname>
-                    <port>9999</port>
-                    <username>admin</username>
-                    <password>admin@1234</password>
-                    <name>SMS_SB</name>
-                    <filename>SMS_SB-0.0.1-SNAPSHOT.war</filename>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>deploy-war</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12.4</version>

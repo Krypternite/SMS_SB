@@ -79,12 +79,20 @@
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
                 <version>7.5.Final</version>
-                <configuration>
-                    <hostname>${hostname}</hostname>
-                    <port>9990</port>
-                    <username>{username}</username>
-                    <password>{password}</password>
-                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <configuration>
+                            <hostname>${hostname}</hostname>
+                            <port>9990</port>
+                            <username>{username}</username>
+                            <password>{password}</password>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

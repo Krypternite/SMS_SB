@@ -5,6 +5,9 @@
  */
 package com.sb.sms.home;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,13 +18,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 public class HomeController {
 
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
     @RequestMapping("/")
-   public String hello() {
+    public String hello() {
         return "Hello World. I did it. Yes. Trying again and now once mroe..... !!!!";
     }
-   
-   @RequestMapping("/test")
-   public String test() {
-        return "This is a test response..... !!!!";
+
+    @RequestMapping("/test")
+    public String test() {
+        return "This is a test BUTUUTUT response..... !!!!";
     }
+
+    @RequestMapping("/testdb")
+    public String testDb() {
+        final String timestamp = jdbcTemplate.queryForObject("select current_timestamp", String.class);
+        return "Database clock is set to: " + timestamp;
+    }
+
 }
